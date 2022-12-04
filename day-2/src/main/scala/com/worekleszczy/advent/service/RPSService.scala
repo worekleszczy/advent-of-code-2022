@@ -1,6 +1,10 @@
 package com.worekleszczy.advent.service
 
-import com.worekleszczy.advent.model.{ Paper, Result, Rock, Scissors, Shape }
+import com.worekleszczy.advent.model.Paper
+import com.worekleszczy.advent.model.Result
+import com.worekleszczy.advent.model.Rock
+import com.worekleszczy.advent.model.Scissors
+import com.worekleszczy.advent.model.Shape
 
 trait RPSService {
 

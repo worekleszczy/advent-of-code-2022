@@ -1,14 +1,8 @@
 package com.worekleszczy.advent.service
+import munit.CatsEffectSuite
 
-import cats.data.NonEmptyVector
-import cats.effect.IO
-import cats.{Alternative, Comonad, NonEmptyTraverse, Traverse, catsParallelForId}
-import munit.{CatsEffectSuite, FunSuite}
-
-import scala.util.{Success, Try}
-import cats.syntax.option._
-import fs2.{Chunk, Pipe, Pull}
-import fs2.io.file.{Files, Path}
+import scala.util.Success
+import scala.util.Try
 
 class ElfServiceTest extends CatsEffectSuite {
 

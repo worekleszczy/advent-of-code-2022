@@ -86,6 +86,11 @@ lazy val `day-3` = (project in file("day-3"))
     libraryDependencies ++= munit ++ cats ++ fs2
   ).dependsOn(utils)
 
+lazy val `day-4` = (project in file("day-4"))
+  .settings(
+    libraryDependencies ++= munit ++ cats ++ fs2
+  ).dependsOn(utils)
+
 lazy val utils = (project in file("utils"))
   .settings(
     libraryDependencies ++= munit ++ cats ++ fs2

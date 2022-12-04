@@ -1,10 +1,10 @@
 package com.worekleszczy.advent.service
 
 import cats.ApplicativeError
-import cats.syntax.traverse._
-import cats.syntax.applicativeError._
 import cats.syntax.applicative._
+import cats.syntax.applicativeError._
 import cats.syntax.functor._
+import cats.syntax.traverse._
 
 trait ElfService[F[_]] {
   def sumCalories(entries: Vector[String]): F[Long]

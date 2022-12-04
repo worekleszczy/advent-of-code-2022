@@ -1,10 +1,11 @@
 package com.worekleszczy.advent.service
 
-import com.worekleszczy.advent.model.Result.{ Draws, Wins }
-import com.worekleszczy.advent.model.{ Paper, Rock, Scissors }
+import com.worekleszczy.advent.model.Paper
+import com.worekleszczy.advent.model.Result.Draws
+import com.worekleszczy.advent.model.Result.Wins
+import com.worekleszczy.advent.model.Rock
+import com.worekleszczy.advent.model.Scissors
 import munit.FunSuite
-
-import scala.util.Try
 
 class RPSServiceTest extends FunSuite {
 

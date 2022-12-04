@@ -1,19 +1,17 @@
 package com.worekleszczy.advent.part1
 
 import cats.syntax.foldable._
-import cats.syntax.traverse._
-import cats.syntax.reducible._
 import com.worekleszczy.advent.service.ElfService
 
 import scala.io.Source
-import scala.util.{ Success, Try }
+import scala.util.Try
 import scala.util.chaining._
 
 object Trivial extends App {
-  val elfService = ElfService[Try]
-  val lines      = Source.fromResource("input").getLines().toVector
+  val elfService: ElfService[Try] = ElfService[Try]
+  val lines: Vector[String]      = Source.fromResource("input").getLines().toVector
 
-  val elfsLists = (lines
+  val elfsLists: Vector[Vector[String]] = (lines
     .foldLeft((Vector.empty[Vector[String]], Vector.empty[String])) { case ((lists, current), line) =>
       if (line == "") (lists :+ current, Vector.empty) else (lists, current :+ line)
     })

@@ -1,6 +1,8 @@
 package com.worekleszczy.advent.model
 
-import com.worekleszczy.advent.model.Result.{ Draws, Lose, Wins }
+import com.worekleszczy.advent.model.Result.Draws
+import com.worekleszczy.advent.model.Result.Lose
+import com.worekleszczy.advent.model.Result.Wins
 
 sealed trait Result {
   def inverse: Result = this match {

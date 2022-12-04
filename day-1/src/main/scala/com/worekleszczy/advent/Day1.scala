@@ -1,21 +1,20 @@
 package com.worekleszczy.advent
 
 import cats.syntax.foldable._
-import cats.syntax.traverse._
-import cats.syntax.reducible._
 import com.worekleszczy.advent.service.ElfService
 
 import scala.io.Source
-import scala.util.{ Success, Try }
+import scala.util.Success
+import scala.util.Try
 import scala.util.chaining._
 
 object Day1 extends App {
   final case class ElfState(max: Option[Long], currentElfEntries: Vector[String])
 
-  val elfService = ElfService[Try]
-  val lines      = Source.fromResource("input").getLines().toVector
+  val elfService: ElfService[Try] = ElfService[Try]
+  val lines: Vector[String]      = Source.fromResource("input").getLines().toVector
 
-  val elfsLists = (lines
+  val elfsLists: Vector[Vector[String]] = (lines
     .foldLeft((Vector.empty[Vector[String]], Vector.empty[String])) { case ((lists, current), line) =>
       if (line == "") (lists :+ current, Vector.empty) else (lists, current :+ line)
     })
@@ -23,7 +22,9 @@ object Day1 extends App {
       lists :+ last
     }
 
-  println(elfsLists.foldM(0L)((max, elfList) => elfService.sumCalories(elfList).map(sum => if(sum > max) sum else max)))
+  println(
+    elfsLists.foldM(0L)((max, elfList) => elfService.sumCalories(elfList).map(sum => if (sum > max) sum else max))
+  )
 
   println(
     (lines.toVector :+ "")

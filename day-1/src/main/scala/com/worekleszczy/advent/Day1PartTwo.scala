@@ -4,13 +4,14 @@ import cats.syntax.foldable._
 import com.worekleszczy.advent.service.ElfService
 
 import scala.io.Source
-import scala.util.{ Success, Try }
+import scala.util.Success
+import scala.util.Try
 
 object Day1PartTwo extends App {
   final case class ElfState(results: Vector[Long], currentElfEntries: Vector[String])
 
-  val elfService = ElfService[Try]
-  val lines      = Source.fromResource("input").getLines()
+  val elfService: ElfService[Try] = ElfService[Try]
+  val lines: Iterator[String]      = Source.fromResource("input").getLines()
 
   println(
     (lines.toVector :+ "")
