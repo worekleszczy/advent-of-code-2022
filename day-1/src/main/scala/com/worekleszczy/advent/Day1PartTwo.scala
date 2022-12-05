@@ -11,7 +11,7 @@ object Day1PartTwo extends App {
   final case class ElfState(results: Vector[Long], currentElfEntries: Vector[String])
 
   val elfService: ElfService[Try] = ElfService[Try]
-  val lines: Iterator[String]      = Source.fromResource("input").getLines()
+  val lines: Iterator[String]     = Source.fromResource("input").getLines()
 
   println(
     (lines.toVector :+ "")

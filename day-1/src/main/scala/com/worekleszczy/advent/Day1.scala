@@ -12,7 +12,7 @@ object Day1 extends App {
   final case class ElfState(max: Option[Long], currentElfEntries: Vector[String])
 
   val elfService: ElfService[Try] = ElfService[Try]
-  val lines: Vector[String]      = Source.fromResource("input").getLines().toVector
+  val lines: Vector[String]       = Source.fromResource("input").getLines().toVector
 
   val elfsLists: Vector[Vector[String]] = (lines
     .foldLeft((Vector.empty[Vector[String]], Vector.empty[String])) { case ((lists, current), line) =>

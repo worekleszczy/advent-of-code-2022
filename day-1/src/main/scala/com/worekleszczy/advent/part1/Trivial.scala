@@ -9,7 +9,7 @@ import scala.util.chaining._
 
 object Trivial extends App {
   val elfService: ElfService[Try] = ElfService[Try]
-  val lines: Vector[String]      = Source.fromResource("input").getLines().toVector
+  val lines: Vector[String]       = Source.fromResource("input").getLines().toVector
 
   val elfsLists: Vector[Vector[String]] = (lines
     .foldLeft((Vector.empty[Vector[String]], Vector.empty[String])) { case ((lists, current), line) =>
